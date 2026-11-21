@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 38% 98%;
+    --foreground: 300 22% 15%;
+    --ink: 300 28% 12%;
+    --card: 0 0% 100%;
+    --primary: 334 52% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 135 14% 91%;
+    --secondary-foreground: 140 25% 22%;
+    --accent: 38 52% 62%;
+    --accent-foreground: 300 28% 12%;
+    --muted: 340 22% 94%;
+    --muted-foreground: 300 8% 38%;
+    --border: 340 18% 87%;
+    --destructive: 0 68% 44%;
+    --radius: 0.7rem;
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, .font-display { font-family: var(--font-display), Georgia, serif; letter-spacing: -0.01em; }
+  :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
+  @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+}
+
+/* Wedding arch: the one signature shape of the site */
+.arch { border-top-left-radius: 999px; border-top-right-radius: 999px; }
