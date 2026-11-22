@@ -4,7 +4,11 @@ import { createAuthMiddleware, APIError } from "better-auth/api";
 import { MongoClient, ObjectId } from "mongodb";
 
 const globalForMongo = globalThis;
-const client = (globalForMongo._wedplanMongo ??= new MongoClient(process.env.MONGODB_URI));
+const client = (globalForMongo._wedplanMongo ??= new MongoClient(process.env.MONGODB_URI, {
+  serverSelectionTimeoutMS: 10000,
+  maxPoolSize: 5,
+  family: 4,
+}));
 export const db = client.db(process.env.MONGODB_DB || "wedplan");
 
 const cookieValue = (headers, name) => {
