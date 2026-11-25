@@ -10,7 +10,7 @@ const NAV = {
     ["/bookings", "Booking Requests", CalendarCheck], ["/subscription", "Subscription", Crown], ["/profile", "Profile Settings", UserCog],
   ],
   customer: [["", "Overview", LayoutDashboard], ["/bookings", "My Bookings", CalendarHeart], ["/profile", "Profile Settings", UserCog]],
-  admin: [["", "Overview", LayoutDashboard], ["/users", "Manage Users", Users], ["/services", "Manage Services", ListChecks], ["/transactions", "Transactions", Receipt]],
+    admin: [["", "Overview", LayoutDashboard], ["/users", "Manage Users", Users], ["/services", "Manage Services", ListChecks], ["/bookings", "Manage Bookings", CalendarCheck], ["/transactions", "Transactions", Receipt]],
 };
 
 export default function Sidebar({ role, onNavigate }) {
